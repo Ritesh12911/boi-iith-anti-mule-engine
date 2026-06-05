@@ -43,7 +43,7 @@ class AIStreamingMuleEngine:
         raw_anomaly_score = self.ai_model.decision_function(feature_vector)[0]
         
         # Transform the raw statistical distance into a human-readable risk metric
-        scaled_risk = int((1.0 - (raw_anomaly_score + 0.5) / 1.0) * 100)
+        scaled_risk = int((1.0 - (raw_anomaly_score + 0.65) / 1.0) * 100)
         return max(0, min(scaled_risk, 100))
 
 # --- UI STYLING & CORE DASHBOARD ---
